@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hybridge — Login</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: #111111;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #2a2a2a;
+  }
+  .notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 34px;
+    background: #0a0a0a;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+  }
+  .status-bar {
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 28px 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .screen {
+    height: calc(844px - 50px);
+    background: #111111;
+    display: flex;
+    flex-direction: column;
+    padding: 0 28px 40px;
+    overflow: hidden;
+  }
+
+  /* LOGO */
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 0 32px;
+    gap: 12px;
+  }
+  .shield {
+    width: 64px;
+    height: 72px;
+  }
+  .logo-text { text-align: center; }
+  .logo-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    display: block;
+  }
+  .logo-sub {
+    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* CARD */
+  .card {
+    background: #1a1a1a;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    color: rgba(255,255,255,0.35);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+  .field-input {
+    background: #222222;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .forgot {
+    color: #C8E04A;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    margin-top: -8px;
+  }
+  .btn-primary {
+    background: #C8E04A;
+    border-radius: 14px;
+    padding: 16px;
+    color: #0a0a0a;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .divider-line {
+    flex: 1;
+    height: 0.5px;
+    background: rgba(255,255,255,0.08);
+  }
+  .divider-text {
+    color: rgba(255,255,255,0.2);
+    font-size: 11px;
+  }
+  .btn-google {
+    background: #1e1e1e;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 14px;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .google-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4285F4;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="notch"></div>
+  <div class="status-bar">
+    <span>9:41</span>
+    <span>100%</span>
+  </div>
+  <div class="screen">
+
+    <div class="logo-section">
+      <svg class="shield" viewBox="0 0 64 72" fill="none">
+        <path d="M32 0L0 13V34C0 52 14 67 32 72C50 67 64 52 64 34V13L32 0Z" fill="#C8E04A"/>
+        <rect x="16" y="16" width="11" height="16" rx="2.5" fill="#111"/>
+        <rect x="37" y="16" width="11" height="16" rx="2.5" fill="#111"/>
+        <rect x="16" y="36" width="11" height="11" rx="2.5" fill="#111"/>
+        <rect x="37" y="36" width="11" height="11" rx="2.5" fill="#111"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">HYBRIDGE</span>
+        <span class="logo-sub">EDUCATION</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="field">
+        <div class="field-label">CORREO INSTITUCIONAL</div>
+        <div class="field-input">
+          <span>rodrigo@hybridge.edu.mx</span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">CONTRASENA</div>
+        <div class="field-input">
+          <span>••••••••</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5C7 5 2.73 8.11 1 12.5C2.73 16.89 7 20 12 20C17 20 21.27 16.89 23 12.5C21.27 8.11 17 5 12 5ZM12 17.5C9.24 17.5 7 15.26 7 12.5C7 9.74 9.24 7.5 12 7.5C14.76 7.5 17 9.74 17 12.5C17 15.26 14.76 17.5 12 17.5Z" fill="rgba(255,255,255,0.25)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="forgot">Olvide mi contrasena</div>
+      <div class="btn-primary">INICIAR SESION</div>
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-text">o continua con</span>
+        <div class="divider-line"></div>
+      </div>
+      <div class="btn-google">
+        <div class="google-icon">G</div>
+        Continuar con Google
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
